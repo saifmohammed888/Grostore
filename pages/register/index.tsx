@@ -54,7 +54,7 @@ const Register: React.FC = () => {
                 Sign Up with Facebook
               </button>
               <p>
-                Already have an account ? <Link href="/login">Sign In</Link>
+                Already have an account ? <Link href="/login" passHref>Sign In</Link>
               </p>
             </section>
           </section>

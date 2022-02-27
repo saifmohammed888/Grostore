@@ -6,20 +6,18 @@ interface StateType {
 
 export default function alertReducer(
   state: StateType = { error: null },
-  action
+  action: { type: any; payload: any }
 ): any {
   switch (action.type) {
     case alertTypes.successAlert:
-      state.alert = action.data;
-      state.show = true;
-      state.type = 'success';
+      state.message = action.payload;
+      state.type = alertTypes.successAlert;
       return {
         ...state,
       };
     case alertTypes.errorAlert:
-      state.alert = action.data;
-      state.show = false;
-      state.type = 'error';
+      state.message = action.payload;
+      state.type = alertTypes.errorAlert;
       return {
         ...state,
       };

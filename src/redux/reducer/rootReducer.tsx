@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import alertReducer from 'redux/reducer/alertReducer';
-import pinReducer from 'redux/reducer/pinReducer';
 
-const rootReducer = combineReducers({
-  pincode: pinReducer,
+import pinReducer from 'redux/reducer/pinReducer';
+import alertReducer from './alertReducer';
+
+const reducer = combineReducers({
+  pin: pinReducer,
   alert: alertReducer,
 });
 
-export default rootReducer;
+export default reducer;

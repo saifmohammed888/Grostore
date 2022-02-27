@@ -50,7 +50,10 @@ const Login: React.FC = () => {
               Sign In with Facebook
             </button>
             <p>
-              New to Grostore ? <Link href="/register">Sign Up</Link>
+              New to Grostore ?{' '}
+              <Link href="/register" passHref>
+                Sign Up
+              </Link>
             </p>
           </section>
         </section>

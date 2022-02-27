@@ -3,6 +3,7 @@ import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Navbar from 'components/common/navbar/navbar';
 import { delivery } from 'constants/images';
+import Layout from 'components/common/layout/layout';
 
 const Welcome: React.FC = () => {
   const Popular = dynamic(() => import('./popular/popular'));
@@ -12,29 +13,15 @@ const Welcome: React.FC = () => {
   const WhyGrostore = dynamic(() => import('./why/why'));
 
   return (
-    <div className="overflow-x-hidden ">
-      <section className="w-screen h-[100%]  bg-banner bg-cover bg-center bg-no-repeat relative">
-        <Navbar />
-
+    <Layout>
+      <div className="overflow-x-hidden ">
         <Intro />
-        <section className="md:w-[450px] md:h-[500px] h-[300px] block w-[300px] bottom-5 absolute right-0">
-          <Image
-            src={delivery}
-            quality="100"
-            width="10"
-            height="10"
-            layout="responsive"
-            priority
-            alt="logo"
-          />
-        </section>
-      </section>
-
-      <Popular />
-      <Categories />
-      <WhyGrostore />
-      <Footer />
-    </div>
+        <Popular />
+        <Categories />
+        <WhyGrostore />
+        <Footer />
+      </div>
+    </Layout>
   );
 };
 

@@ -1,14 +1,14 @@
-import { Provider } from 'react-redux';
-import store from 'redux/store';
+import React from 'react';
+import { wrapper } from 'redux/store';
+import { AppProps } from 'next/app';
 import 'styles/globals.css';
 import 'antd/dist/antd.css';
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
+class MyApp extends React.Component<AppProps> {
+  render() {
+    const { Component, pageProps } = this.props;
+    return <Component {...pageProps} />;
+  }
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

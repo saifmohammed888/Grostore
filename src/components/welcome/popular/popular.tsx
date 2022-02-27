@@ -1,6 +1,5 @@
 import CardProduct from 'components/common/card/cardProduct';
 import { items } from 'constants/data/items';
-import Image from 'next/image';
 
 const Popular: React.FC = () => {
   let trendingItems = items.filter((item) => item.trending === true);

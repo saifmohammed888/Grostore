@@ -1,8 +1,10 @@
 import Head from 'next/head';
-import { NextPage } from 'next';
 import Welcome from 'components/welcome/welcome';
+import { wrapper } from 'redux/store';
+import { pincode } from 'constants/data/pincode';
+import { alertTypes, pinAction } from 'redux/types';
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <div>
       <Head>
@@ -37,3 +39,10 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps = wrapper.getStaticProps((store) => () => {
+  store.dispatch({
+    type: pinAction.setPincode,
+    payload: pincode,
+  });
+});
