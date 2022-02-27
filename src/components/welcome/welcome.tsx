@@ -12,30 +12,29 @@ const Welcome: React.FC = () => {
   const WhyGrostore = dynamic(() => import('./why/why'));
 
   return (
-    <>
-      <div className="w-screen min-h-[100vh] h-auto md:h-[90vh] bg-[#232229]">
-        <section className="w-screen h-[100%]  bg-banner bg-cover bg-center bg-no-repeat relative ">
-          <Navbar />
+    <div className="overflow-x-hidden ">
+      <section className="w-screen h-[100%]  bg-banner bg-cover bg-center bg-no-repeat relative">
+        <Navbar />
 
-          <Intro />
-          <section className="md:w-[450px] md:h-[500px] h-[300px] block w-[300px] bottom-5 absolute right-0">
-            <Image
-              src={delivery}
-              quality="100"
-              width="10"
-              height="10"
-              layout="responsive"
-              priority
-              alt="logo"
-            />
-          </section>
+        <Intro />
+        <section className="md:w-[450px] md:h-[500px] h-[300px] block w-[300px] bottom-5 absolute right-0">
+          <Image
+            src={delivery}
+            quality="100"
+            width="10"
+            height="10"
+            layout="responsive"
+            priority
+            alt="logo"
+          />
         </section>
-        <Popular />
-        <Categories />
-        <WhyGrostore />
-        <Footer />
-      </div>
-    </>
+      </section>
+
+      <Popular />
+      <Categories />
+      <WhyGrostore />
+      <Footer />
+    </div>
   );
 };
 

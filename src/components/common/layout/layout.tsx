@@ -1,12 +1,15 @@
-import Navbar from "components/common/navbar/navbar"
+import Navbar from 'components/common/navbar/navbar';
 
 const Layout: React.FunctionComponent = ({ children }) => {
-    return (
-        <div>
-            <Navbar />
-            <main>{children}</main>
-        </div>
-    )
-}
+  return (
+    <div className="m-0 p-0">
+      <section className="bg-[#252d27] ">
+        <Navbar />
+      </section>
 
-export default Layout
+      <main>{children}</main>
+    </div>
+  );
+};
+
+export default Layout;

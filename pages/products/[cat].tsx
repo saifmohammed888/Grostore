@@ -1,25 +1,35 @@
 import { faFilter, faSort } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CardItem from 'components/common/card/card';
+import CardProduct from 'components/common/card/cardProduct';
 import Layout from 'components/common/layout/layout';
-import Navbar from 'components/common/navbar/navbar';
-import { Categories } from 'constants/data/category';
+import { items } from 'constants/data/items';
+import { useRouter } from 'next/router';
+import { Key } from 'react';
 
-const CategoryComponent: React.FC = () => {
-  let category: any = Categories;
+const Product: React.FC = () => {
+  let prod: any = items;
 
+  const router = useRouter();
+  let route: any = router.query;
+
+  prod = prod.filter((item) => item.category === route.cat);
+
+  if (prod.length === 0) {
+    prod = items;
+  }
   return (
     <Layout>
       <div className="w-screen h-auto flex justify-center">
         <section className="w-[15vw]  text-left pl-10 absolute left-0 top-[11vh]  bg-white p-4">
-          <p className="text-xl m-4 font-serif font-semibold">Categories</p>
+          <p className="text-xl m-4 font-serif font-semibold">Products</p>
           <ul className="text-md my-4 font-serif font-light">
-            {category.map((cat) => (
+            {prod.map((item, index) => (
               <li
-                key={cat.id}
+                key={index}
                 className="m-8 text-brown-300 hover:text-red-600 "
               >
-                {cat.name}
+                {item.name}
               </li>
             ))}
           </ul>
@@ -28,7 +38,7 @@ const CategoryComponent: React.FC = () => {
           <section className="flex">
             <span>
               <input
-                placeholder="Search Category"
+                placeholder="Search Product"
                 className="w-[22vw] p-4 border outline-none hover:border-green-300 bg-white rounded-l-full border-1 border-purple-200"
                 type="text"
               />
@@ -44,8 +54,8 @@ const CategoryComponent: React.FC = () => {
             </section>
           </section>
           <section className="flex flex-wrap gap-10 my-5 h-auto overflow-y-scroll ">
-            {category.map((cat, index) => {
-              return <CardItem key={index} item={cat} />;
+            {prod.map((item: any, index: Key) => {
+              return <CardItem key={index} item={item} />;
             })}
           </section>
         </section>
@@ -53,4 +63,4 @@ const CategoryComponent: React.FC = () => {
     </Layout>
   );
 };
-export default CategoryComponent;
+export default Product;

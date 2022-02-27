@@ -27,11 +27,6 @@ const Home: NextPage = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:updated_time" content="1440432930" />
-        <link
-          rel="shortcut icon"
-          href="https://res.cloudinary.com/saif-freelance2/image/upload/v1645607384/Grostore/logo/GROSTORE-nobg_gxhxpt.webp"
-          type="image/x-icon"
-        />
       </Head>
 
       <main>
