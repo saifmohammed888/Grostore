@@ -15,7 +15,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
   let [isError, setError] = useState(false);
 
   useEffect(() => {
-    console.log(alert);
     if (alert && alert.message) {
       alert.type && alert.type === alertTypes.successAlert
         ? setAlert(true)
@@ -27,7 +26,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
         setError(false);
       }, 3000);
     }
-  }, [alert]);
+  }, [alert, dispatch]);
 
   return (
     <div>

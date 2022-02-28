@@ -14,7 +14,7 @@ const Home = ({ pincodes }) => {
 
   useEffect(() => {
     pinActionCreator.setPincode(dispatch, pincodes);
-  }, []);
+  }, [pincodes, dispatch]);
 
   return (
     <div>

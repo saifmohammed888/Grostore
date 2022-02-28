@@ -9,18 +9,7 @@ import { useDispatch } from 'react-redux';
 const CardProduct = dynamic(() => import('components/common/card/cardProduct'));
 
 function Products({ item }) {
-
-
-  const handleSearch = (str) => {
-    items = itemsList.filter((cat) =>
-      cat.name.toLowerCase().includes(str.toLowerCase())
-    );
-
-    if (items.length === 0) {
-      alertActionCreator.errorAlert(dispatch, 'No Categories found');
-    }
-    setItems(items);
-  };
+  let items: any = item;
 
   const Layout = dynamic(() => import('components/common/layout/layout'));
 
@@ -47,9 +36,6 @@ function Products({ item }) {
                 placeholder="Search Product"
                 className="w-[22vw] p-4 border outline-none hover:border-green-300 bg-white rounded-l-full border-1 border-purple-200"
                 type="text"
-                onChange={(e) => {
-                  handleSearch(e.target.value);
-                }}
               />
               <button className="w-[7vw] p-4 border outline-none hover:border-green-300 bg-gray-700 rounded-r-full text-white">
                 Search

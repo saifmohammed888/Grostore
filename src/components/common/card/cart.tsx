@@ -16,9 +16,6 @@ const Cart: React.FC<any> = (item) => {
   let cart = useSelector((state: any) => state.cart);
 
   const removeCart = (id) => {
-    console.log(id);
-    console.log(cart);
-
     if (cart.items.length > 0) {
       let item = cart.items;
       var filtered = item.filter(function (el) {
