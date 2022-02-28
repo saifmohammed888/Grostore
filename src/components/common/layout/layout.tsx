@@ -1,31 +1,38 @@
-import Navbar from 'components/common/navbar/navbar';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import alertActionCreator from 'redux/actionCreators/alertAction';
 import { alertTypes } from 'redux/types';
-import Success from '../Alerts/Success';
-import Error from '../Alerts/Error';
+import Heads from '../Head';
+const Success = dynamic(() => import('components/common/Alerts/Success'));
+const Navbar = dynamic(() => import('components/common/navbar/navbar'));
+const Error = dynamic(() => import('components/common/Alerts/Error'));
 
-const Layout: React.FunctionComponent = ({ children }) => { 
+const Layout: React.FunctionComponent = ({ children }) => {
   const alert = useSelector((state: any) => state.alert);
+  const dispatch = useDispatch();
   let [isAlert, setAlert] = useState(false);
   let [isError, setError] = useState(false);
 
   useEffect(() => {
-    if (alert.type === alertTypes.successAlert) {
-      setAlert(true);
-    } else {
-      setError(true);
-    }
+    console.log(alert);
+    if (alert && alert.message) {
+      alert.type && alert.type === alertTypes.successAlert
+        ? setAlert(true)
+        : setError(true);
 
-    setTimeout(() => {
-      setAlert(false);
-      setError(false);
-    }, 3000);
+      setTimeout(() => {
+        alertActionCreator.errorAlert(dispatch, null);
+        setAlert(false);
+        setError(false);
+      }, 3000);
+    }
   }, [alert]);
 
   return (
     <div>
-      <div className="w-[20vw] p-4 absolute top-[10vh] right-10 z-10">
+      <Heads />
+      <div className="alert">
         {isAlert ? <Success message={alert.message} /> : <></>}
         {isError ? <Error message={alert.message} /> : <></>}
       </div>

@@ -1,9 +1,11 @@
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Navbar from 'components/common/navbar/navbar';
 import { delivery } from 'constants/images';
-import Image from 'rc-image';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Link from 'next/link';
+
+const Navbar = dynamic(() => import('components/common/navbar/navbar'));
 
 const Register: React.FC = () => {
   return (
@@ -21,7 +23,8 @@ const Register: React.FC = () => {
             </p>
             <Image
               src="https://res.cloudinary.com/saif-freelance2/image/upload/v1645907424/Grostore/others/Grostore-removebg-preview_pxdbjg.png"
-              width="50"
+              width="350"
+              height="350"
               alt="delivery"
               className="w-[20vw] absolute bottom-0"
             />
@@ -31,7 +34,8 @@ const Register: React.FC = () => {
               <Image
                 src={delivery}
                 alt="logo"
-                width="100"
+                width="160"
+                height="160"
                 className="w-[10vw]  m-auto"
               />
               <p className="mt-5 text-green-700">
@@ -54,7 +58,10 @@ const Register: React.FC = () => {
                 Sign Up with Facebook
               </button>
               <p>
-                Already have an account ? <Link href="/login" passHref>Sign In</Link>
+                Already have an account ?{' '}
+                <Link href="/login" passHref>
+                  Sign In
+                </Link>
               </p>
             </section>
           </section>

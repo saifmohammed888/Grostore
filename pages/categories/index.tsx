@@ -1,12 +1,35 @@
 import { faFilter, faSort } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CardItem from 'components/common/card/card';
-import Layout from 'components/common/layout/layout';
-import Navbar from 'components/common/navbar/navbar';
+import dynamic from 'next/dynamic';
 import { Categories } from 'constants/data/category';
+import { CategoryType } from 'constants/data/category';
+import { useState } from 'react';
+import alertActionCreator from 'redux/actionCreators/alertAction';
+import { useDispatch } from 'react-redux';
 
-const CategoryComponent: React.FC = () => {
-  let category: any = Categories;
+const Layout = dynamic(() => import('components/common/layout/layout'));
+const CardItem = dynamic(() => import('components/common/card/card'));
+
+function CategoryComponent({ categories }) {
+  let dispatch = useDispatch();
+  let [categoryList, setCategoryList] = useState(categories);
+  let [category, setCategory] = useState(categories);
+  let [asc, setDir] = useState(true);
+
+  const handleSearch = (str) => {
+    category = categoryList.filter((cat) =>
+      cat.name.toLowerCase().includes(str.toLowerCase())
+    );
+
+    if (category.length === 0) {
+      alertActionCreator.errorAlert(dispatch, 'No Categories found');
+    }
+    setCategory(category);
+  };
+
+  const handleSort = () => {
+    setCategory(category.sort((a, b) => (a.name > b.name ? 1 : -1)));
+  };
 
   return (
     <Layout>
@@ -31,6 +54,7 @@ const CategoryComponent: React.FC = () => {
                 placeholder="Search Category"
                 className="w-[22vw] p-4 border outline-none hover:border-green-300 bg-white rounded-l-full border-1 border-purple-200"
                 type="text"
+                onChange={(e) => handleSearch(e.target.value)}
               />
               <button className="w-[7vw] p-4 border outline-none hover:border-green-300 bg-gray-700 rounded-r-full text-white">
                 Search
@@ -40,7 +64,13 @@ const CategoryComponent: React.FC = () => {
               <FontAwesomeIcon icon={faFilter} className="w-[1vw] h-[1vw]" />
             </section>
             <section className="search w-[3vw] p-4 h-[3vw] hover:bg-white hover:border-2 shadow-lg rounded-full bg-gray-100">
-              <FontAwesomeIcon icon={faSort} className="w-[1vw] h-[1vw]" />
+              <a
+                onClick={() => {
+                  handleSort();
+                }}
+              >
+                <FontAwesomeIcon icon={faSort} className="w-[1vw] h-[1vw]" />
+              </a>
             </section>
           </section>
           <section className="flex flex-wrap gap-10 my-5 h-auto overflow-y-scroll ">
@@ -52,5 +82,20 @@ const CategoryComponent: React.FC = () => {
       </div>
     </Layout>
   );
-};
+}
+
 export default CategoryComponent;
+
+export async function getServerSideProps(context) {
+  const categories: any = Categories;
+
+  if (!categories) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { categories },
+  };
+}

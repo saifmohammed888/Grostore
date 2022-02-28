@@ -10,5 +10,9 @@
       ],
       "extends": ["plugin:testing-library/react"]
     }
-  ]
+  ],
+  "rules": {
+    "no-console": 2,
+    "no-empty": 2
+  }
 }

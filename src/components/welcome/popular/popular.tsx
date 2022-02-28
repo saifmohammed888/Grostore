@@ -1,5 +1,6 @@
-import CardProduct from 'components/common/card/cardProduct';
+const CardProduct = dynamic(() => import('components/common/card/cardProduct'));
 import { items } from 'constants/data/items';
+import dynamic from 'next/dynamic';
 
 const Popular: React.FC = () => {
   let trendingItems = items.filter((item) => item.trending === true);

@@ -12,6 +12,7 @@ export default function alertReducer(
     case alertTypes.successAlert:
       state.message = action.payload;
       state.type = alertTypes.successAlert;
+    
       return {
         ...state,
       };

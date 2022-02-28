@@ -2,6 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { HYDRATE, createWrapper } from 'next-redux-wrapper';
 import thunkMiddleware from 'redux-thunk';
 import reducers from 'redux/reducer/rootReducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const bindMiddlware = (middlware) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -33,3 +34,5 @@ export const wrapper = createWrapper(initStore, {
   serializeState: (state) => JSON.stringify(state),
   deserializeState: (state) => JSON.parse(state),
 });
+
+export const store = createStore(reducers, composeWithDevTools());

@@ -1,4 +1,9 @@
-import Image from 'rc-image';
+import useSelection from 'antd/lib/table/hooks/useSelection';
+import Image from 'next/image';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import alertActionCreator from 'redux/actionCreators/alertAction';
+import cartActionCreator from 'redux/actionCreators/cartAction';
 
 interface Props {
   item: {
@@ -14,16 +19,38 @@ interface Props {
 }
 
 const CardProduct: React.FC<Props> = ({ item }) => {
+  let dispatch = useDispatch();
+  let cart = useSelector((state: any) => state.cart);
+
+  const addToCart = (id) => {
+    let item = [id];
+
+    if (cart.items) {
+      item = cart.items;
+      if (!item.includes(id)) {
+        item.push(id);
+      }
+    }
+
+    cartActionCreator.addToCart(dispatch, item);
+    alertActionCreator.successAlert(dispatch, 'Add to Cart Successfull');
+
+    let local = JSON.stringify(item);
+    if (window != undefined) {
+      localStorage.setItem('cart', local);
+    }
+  };
+
   return (
     <section
       key={item.id}
-      className="w-[16vw] min-h-[35vh] h-auto hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
+      className="w-[16vw] min-h-[33vh] h-auto hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
     >
       <Image
         src={item.image}
         alt="Item"
-        width="100"
-        height="100"
+        width="200"
+        height="150"
         className="rounded-[1vh] h-[200px] w-[100%] "
       />
       <section className="p-1 text-left">
@@ -45,7 +72,11 @@ const CardProduct: React.FC<Props> = ({ item }) => {
           ₹{item.price}{' '}
           <del className="text-red-700">₹{item.discountAmount}</del>
         </p>
-        <button className="p-2 w-[90%] m-[5%] bg-yellow-500 border rounded-lg text-white">
+
+        <button
+          onClick={() => addToCart(item.id)}
+          className="p-2 w-[90%] m-[5%] bg-yellow-500 border rounded-lg text-white"
+        >
           Add to Cart
         </button>
       </section>

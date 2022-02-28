@@ -1,5 +1,6 @@
 import { Categories } from 'constants/data/category';
-import CardItem from 'components/common/card/card';
+import dynamic from 'next/dynamic';
+const CardItem = dynamic(() => import('components/common/card/card'));
 
 const Category: React.FC = () => {
   return (

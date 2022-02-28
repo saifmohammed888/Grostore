@@ -1,9 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import Navbar from 'components/common/navbar/navbar';
-import { delivery } from 'constants/images';
-import Layout from 'components/common/layout/layout';
+import { useDispatch, useSelector } from 'react-redux';
+import cartActionCreator from 'redux/actionCreators/cartAction';
+
+const Layout = dynamic(() => import('components/common/layout/layout'));
 
 const Welcome: React.FC = () => {
   const Popular = dynamic(() => import('./popular/popular'));

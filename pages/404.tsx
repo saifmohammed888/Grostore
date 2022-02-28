@@ -1,4 +1,6 @@
-import Navbar from 'components/common/navbar/navbar';
+import dynamic from 'next/dynamic';
+
+const Navbar = dynamic(() => import('components/common/navbar/navbar'));
 
 const Error: React.FC = () => {
   return (

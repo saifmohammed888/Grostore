@@ -1,10 +1,21 @@
 import Head from 'next/head';
-import Welcome from 'components/welcome/welcome';
 import { wrapper } from 'redux/store';
 import { pincode } from 'constants/data/pincode';
-import { alertTypes, pinAction } from 'redux/types';
+import { pinAction } from 'redux/types';
+import dynamic from 'next/dynamic';
+import { useDispatch } from 'react-redux';
+import pinActionCreator from 'redux/actionCreators/pinAction';
+import { useEffect } from 'react';
 
-const Home = () => {
+const Welcome = dynamic(() => import('components/welcome/welcome'));
+
+const Home = ({ pincodes }) => {
+  let dispatch = useDispatch();
+
+  useEffect(() => {
+    pinActionCreator.setPincode(dispatch, pincodes);
+  }, []);
+
   return (
     <div>
       <Head>
@@ -40,9 +51,8 @@ const Home = () => {
 
 export default Home;
 
-export const getStaticProps = wrapper.getStaticProps((store) => () => {
-  store.dispatch({
-    type: pinAction.setPincode,
-    payload: pincode,
-  });
-});
+export async function getStaticProps(context) {
+  return {
+    props: { pincodes: pincode },
+  };
+}

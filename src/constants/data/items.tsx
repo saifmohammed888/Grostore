@@ -331,7 +331,7 @@ export const items: Array<Item> = [
   },
   {
     id: 21,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'Lay,s Classic Salted Potatp chips ',
     qty: '1',
     price: 60,
@@ -346,7 +346,7 @@ export const items: Array<Item> = [
   },
   {
     id: 22,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'kurkure masala munch',
     qty: '1',
     price: 40,
@@ -361,7 +361,7 @@ export const items: Array<Item> = [
   },
   {
     id: 23,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'Dairy milk silk oreo',
     qty: '1',
     price: 30,
@@ -376,7 +376,7 @@ export const items: Array<Item> = [
   },
   {
     id: 24,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'Munch crunchy',
     qty: '1',
     price: 20,
@@ -391,7 +391,7 @@ export const items: Array<Item> = [
   },
   {
     id: 25,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'kwality walls cornetto',
     qty: '1',
     price: 30,
@@ -406,7 +406,7 @@ export const items: Array<Item> = [
   },
   {
     id: 26,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'Britannia Cake',
     qty: '1',
     price: 36,
@@ -421,7 +421,7 @@ export const items: Array<Item> = [
   },
   {
     id: 27,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'Doritos',
     qty: '1',
     price: 42,
@@ -436,7 +436,7 @@ export const items: Array<Item> = [
   },
   {
     id: 28,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: "Haldiram's Lemon bhel",
     qty: '1',
     price: 30,
@@ -451,7 +451,7 @@ export const items: Array<Item> = [
   },
   {
     id: 29,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'Act Classic Popcorn',
     qty: '1',
     price: 36,
@@ -466,7 +466,7 @@ export const items: Array<Item> = [
   },
   {
     id: 30,
-    category: 'Biscuits and Chocolates and Snacks',
+    category: 'snacks',
     name: 'Amul chocolate ice cream',
     qty: '1',
     price: 42,
@@ -481,7 +481,7 @@ export const items: Array<Item> = [
   },
   {
     id: 31,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'coca cola',
     qty: '1',
     price: 42,
@@ -496,7 +496,7 @@ export const items: Array<Item> = [
   },
   {
     id: 32,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'Pepsi',
     qty: '1',
     price: 42,
@@ -511,7 +511,7 @@ export const items: Array<Item> = [
   },
   {
     id: 33,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'tea',
     qty: '1',
     price: 42,
@@ -526,7 +526,7 @@ export const items: Array<Item> = [
   },
   {
     id: 34,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'coffee',
     qty: '1',
     price: 42,
@@ -541,7 +541,7 @@ export const items: Array<Item> = [
   },
   {
     id: 35,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'Dabur Real ',
     qty: '1',
     price: 42,
@@ -556,7 +556,7 @@ export const items: Array<Item> = [
   },
   {
     id: 36,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'maaza',
     qty: '1',
     price: 42,
@@ -571,7 +571,7 @@ export const items: Array<Item> = [
   },
   {
     id: 37,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'frooti',
     qty: '1',
     price: 42,
@@ -586,7 +586,7 @@ export const items: Array<Item> = [
   },
   {
     id: 38,
-    category: 'Bevarages',
+    category: 'drinks',
     name: '7 Up',
     qty: '1',
     price: 42,
@@ -601,7 +601,7 @@ export const items: Array<Item> = [
   },
   {
     id: 39,
-    category: 'Bevarages',
+    category: 'drinks',
     name: 'sprite',
     qty: '1',
     price: 42,
@@ -616,7 +616,7 @@ export const items: Array<Item> = [
   },
   // {
   //   id: 40,
-  //   category: 'Bevarages',
+  //   category: 'drinks',
   //   name: 'Mountain Dew ',
   //   qty: '1',
   //   price: 42,

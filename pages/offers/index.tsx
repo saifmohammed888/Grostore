@@ -1,11 +1,13 @@
-import CardProduct from 'components/common/card/cardProduct';
-import Layout from 'components/common/layout/layout';
 import { Item, items } from 'constants/data/items';
 import { fruit, offer2, offer3 } from 'constants/images';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-const Offers: React.FC = () => {
-  let Products: Array<Item> = items.filter((item) => item.discountAmount > 4);
+const CardProduct = dynamic(() => import('components/common/card/cardProduct'));
+const Layout = dynamic(() => import('components/common/layout/layout'));
+
+function Offers({ item }) {
+  let Products: Array<Item> = item.filter((item) => item.discountAmount > 4);
 
   return (
     <Layout>
@@ -83,5 +85,19 @@ const Offers: React.FC = () => {
       </div>
     </Layout>
   );
-};
+}
 export default Offers;
+
+export async function getServerSideProps(context) {
+  const item: any = items;
+
+  if (!item) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { item },
+  };
+}

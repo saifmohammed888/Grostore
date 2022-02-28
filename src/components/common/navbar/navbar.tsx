@@ -8,9 +8,15 @@ import {
   faClose,
   faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 const Welcome: React.FC = () => {
   let [toggle, setToggle] = useState(false);
+
+  let cart = useSelector((state: any) => state.cart);
+  let cartCount = 0;
+
+  cart.items ? (cartCount = cart.items.length) : (cartCount = cartCount);
 
   return (
     <div className="w-screen h-auto p-1 flex justify-between items-center ">
@@ -42,13 +48,14 @@ const Welcome: React.FC = () => {
               <a className="link">CATEGORIES</a>
             </Link>
           </li>
-          <li className="w-[4vh] h-[4vh] p-2 bg-white rounded-full mx-3  md:mx-6 hover:text-red-600  hover:scale-125 transition duration-200">
+          <li className="w-auto  p-2 mx-3  md:mx-6 hover:text-red-600  hover:scale-125 transition duration-200">
             <Link href="/cart" passHref>
-              <a className="w-[6vw] h-[6vw] ">
+              <a className="flex w-auto">
                 <FontAwesomeIcon
-                  className="text-yellow-500"
+                  className="text-yellow-500 w-[1.5vw]"
                   icon={faShoppingCart}
                 />
+                <p className="text-white mx-2">{cartCount}</p>
               </a>
             </Link>
           </li>

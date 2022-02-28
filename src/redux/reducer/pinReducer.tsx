@@ -10,7 +10,7 @@ export default function pinReducer(
 ): any {
   switch (action.type) {
     case pinAction.setPincode:
-      state.location = action.payload;
+      state.location = action.data;
       return {
         ...state,
       };

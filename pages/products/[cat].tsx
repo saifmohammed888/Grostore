@@ -1,22 +1,38 @@
 import { faFilter, faSort } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CardItem from 'components/common/card/card';
-import CardProduct from 'components/common/card/cardProduct';
 import Layout from 'components/common/layout/layout';
 import { items } from 'constants/data/items';
 import { useRouter } from 'next/router';
-import { Key } from 'react';
+import { Key, useState } from 'react';
+import dynamic from 'next/dynamic';
+import alertActionCreator from 'redux/actionCreators/alertAction';
+import { useDispatch } from 'react-redux';
 
-const Product: React.FC = () => {
-  let prod: any = items;
+const CardProduct = dynamic(() => import('components/common/card/cardProduct'));
+
+function Product({ item }) {
+  let dispatch = useDispatch();
+  let [items, setItems] = useState(item);
+  let [itemsList, setItemsList] = useState(item);
 
   const router = useRouter();
   let route: any = router.query;
 
-  prod = prod.filter((item) => item.category === route.cat);
+  const handleSearch = (str) => {
+    items = itemsList.filter((cat) =>
+      cat.name.toLowerCase().includes(str.toLowerCase())
+    );
 
-  if (prod.length === 0) {
-    prod = items;
+    if (items.length === 0) {
+      alertActionCreator.errorAlert(dispatch, 'No Categories found');
+    }
+    setItems(items);
+  };
+
+  if (route.cat) {
+    items = items.filter((item) => item.category === route.cat.toLowerCase());
+  } else {
+    items = items;
   }
   return (
     <Layout>
@@ -24,7 +40,7 @@ const Product: React.FC = () => {
         <section className="w-[15vw]  text-left pl-10 absolute left-0 top-[11vh]  bg-white p-4">
           <p className="text-xl m-4 font-serif font-semibold">Products</p>
           <ul className="text-md my-4 font-serif font-light">
-            {prod.map((item, index) => (
+            {items.map((item, index) => (
               <li
                 key={index}
                 className="m-8 text-brown-300 hover:text-red-600 "
@@ -41,6 +57,7 @@ const Product: React.FC = () => {
                 placeholder="Search Product"
                 className="w-[22vw] p-4 border outline-none hover:border-green-300 bg-white rounded-l-full border-1 border-purple-200"
                 type="text"
+                onChange={(e) => handleSearch(e.target.value)}
               />
               <button className="w-[7vw] p-4 border outline-none hover:border-green-300 bg-gray-700 rounded-r-full text-white">
                 Search
@@ -54,13 +71,31 @@ const Product: React.FC = () => {
             </section>
           </section>
           <section className="flex flex-wrap gap-10 my-5 h-auto overflow-y-scroll ">
-            {prod.map((item: any, index: Key) => {
-              return <CardItem key={index} item={item} />;
+            {items.map((product, index) => {
+              return (
+                <section key={index}>
+                  <CardProduct item={product} />
+                </section>
+              );
             })}
           </section>
         </section>
       </div>
     </Layout>
   );
-};
+}
 export default Product;
+
+export async function getServerSideProps(context) {
+  const item: any = items;
+
+  if (!item) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { item },
+  };
+}

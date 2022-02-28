@@ -1,5 +1,8 @@
 {
-    "singleQuote": true, 
-    "tabWidth": 2,       
-    "semi": true      
+  "singleQuote": true,
+  "tabWidth": 2,
+  "semi": true,
+  "no-console": false,
+  "no-empty": false,
+  "no-trailing-whitespace": false
 }

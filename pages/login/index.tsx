@@ -1,10 +1,11 @@
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Navbar from 'components/common/navbar/navbar';
 import { delivery } from 'constants/images';
 import Image from 'rc-image';
 import Link from 'next/link';
-import Layout from 'components/common/layout/layout';
+import dynamic from 'next/dynamic';
+
+const Layout = dynamic(() => import('components/common/layout/layout'));
 
 const Login: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const Login: React.FC = () => {
           <Image
             src="https://res.cloudinary.com/saif-freelance2/image/upload/v1645907424/Grostore/others/Grostore-removebg-preview_pxdbjg.png"
             width="50"
+            height="50"
             alt="delivery"
             className="w-[20vw] absolute bottom-0"
           />
@@ -28,6 +30,7 @@ const Login: React.FC = () => {
               src={delivery}
               alt="logo"
               width="100"
+              height="50"
               className="w-[10vw]  m-auto"
             />
             <p className="mt-5 text-green-700">
@@ -61,4 +64,5 @@ const Login: React.FC = () => {
     </Layout>
   );
 };
+
 export default Login;

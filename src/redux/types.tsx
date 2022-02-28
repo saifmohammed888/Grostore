@@ -6,3 +6,7 @@ export const alertTypes = {
 export const pinAction = {
   setPincode: 'SET_PINCODE',
 };
+
+export const cartTypes = {
+  addToCart: 'ADD_TO_CART',
+};

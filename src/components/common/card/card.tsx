@@ -1,4 +1,5 @@
-import Image from 'rc-image';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface Props {
   item: any;
@@ -8,19 +9,25 @@ const CardItem: React.FC<Props> = ({ item }) => {
   return (
     <section
       key={item.id}
-      className="w-[16vw] hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
+      className="w-[16vw] min-h-[33vh] hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
     >
-      <section className="h-[40%]">
-        <Image src={item.image} className="h-[180px] w-[100%]" alt="image" />
-      </section>
+      <Image
+        src={item.image}
+        alt="Item"
+        width="230"
+        height="150"
+        className="rounded-[1vh]"
+      />
       <section className="p-1 text-left">
         <p className="text-lg m-1 font-semibold flex justify-between">
           {item.name}
         </p>
         <p className="text-sm m-1 font-light">{item.description}</p>
-        <button className="p-2 w-[90%] m-[5%] bg-green-600 border rounded-lg text-white">
-          Shop
-        </button>
+        <Link href={{ pathname: '/products/' + item.name }} passHref>
+          <button className="p-2 w-[90%] m-[5%] bg-green-600 border rounded-lg text-white">
+            Shop
+          </button>
+        </Link>
       </section>
     </section>
   );

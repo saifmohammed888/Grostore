@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { Pincode, pincode } from 'constants/data/pincode';
+import { pincode, Pincode } from 'constants/data/pincode';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faMapMarker } from '@fortawesome/free-solid-svg-icons';
+import { delivery } from 'constants/images';
 import alertActionCreator from 'redux/actionCreators/alertAction';
 import Image from 'next/image';
-import { delivery } from 'constants/images';
 
 const Intro: React.FC = () => {
   let [pincodes, setPincode] = useState('');
@@ -41,7 +41,7 @@ const Intro: React.FC = () => {
           <FontAwesomeIcon
             className="w-[wvw] text-red-500 h-[2vw] mx-2"
             icon={faHeart}
-          />{' '}
+          />
           Your Trusted Store
         </span>
         <p className="text-white my-8 font-semibold text-3xl font-mono">
@@ -82,3 +82,4 @@ const Intro: React.FC = () => {
 };
 
 export default Intro;
+
