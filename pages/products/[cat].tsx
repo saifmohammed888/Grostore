@@ -1,5 +1,3 @@
-import { faFilter, faSort } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { items } from 'constants/data/items';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
@@ -9,6 +7,7 @@ import alertActionCreator from 'redux/actionCreators/alertAction';
 import Layout from 'components/common/layout/layout';
 import dynamic from 'next/dynamic';
 import Heads from 'components/common/Head';
+import { Categories } from 'constants/data/category';
 
 const CardProduct = dynamic(() => import('components/common/card/cardProduct'));
 
@@ -45,7 +44,7 @@ export default function Product({ item }) {
         ogDescription={`Grostores | Your ${route.cat}s waiting to be taken away`}
       />
       <Layout>
-        <div className="w-screen h-auto flex justify-center">
+        <div className="w-screen  min-h-[70vh] h-auto flex justify-center">
           <section className="w-[20vw] hidden sm:block  md:w-[15vw]  text-left lg:pl-10 left-0 top-[11vh]  bg-white p-1">
             <p className="text-xl m-4 font-serif font-semibold">Products</p>
             <ul className="text-md my-4 font-serif font-light">
@@ -89,7 +88,7 @@ export default function Product({ item }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const item: any = items;
 
   if (!item) {
@@ -101,4 +100,12 @@ export async function getServerSideProps(context) {
   return {
     props: { item },
   };
+}
+
+export async function getStaticPaths() {
+  const paths = Categories.map((item) => ({
+    params: { cat: item.name },
+  }));
+
+  return { paths, fallback: false };
 }

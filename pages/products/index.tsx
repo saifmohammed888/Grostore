@@ -37,7 +37,7 @@ export default function Products({ item }) {
         ogDescription="Grostore, buy fresh products from our wide range of products"
       />
       <Layout>
-        <div className="w-screen h-auto flex justify-center">
+        <div className="w-screen  min-h-[70vh] h-auto flex justify-center">
           <section className="w-[20vw] hidden sm:block  md:w-[15vw]  text-left lg:pl-10 left-0 top-[11vh]  bg-white p-1">
             <p className="text-xl m-4 font-serif font-semibold">Products</p>
             <ul className="text-md my-4 font-serif font-light">
