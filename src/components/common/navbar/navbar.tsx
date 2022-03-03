@@ -111,12 +111,12 @@ const Welcome: React.FC = () => {
             </li>
 
             <li className="m-4 hover:text-yellow-600">
-              <Link href="/services" passHref>
-                <a className="link">SERVICES</a>
+              <Link href="/products" passHref>
+                <a className="link">Products</a>
               </Link>
             </li>
             <li className="m-4 hover:text-yellow-600">
-              <Link href="/services" passHref>
+              <Link href="/cart" passHref>
                 <a className="link">
                   CART
                   <span className="text-white mx-2 p-1 w-[10px] h-[5px] bg-blue-600 rounded-full">

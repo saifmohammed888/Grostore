@@ -54,7 +54,7 @@ const Intro: React.FC = () => {
           Enter your pincode to verify delivery available to your place <br />
           Thanks for choosing us.
         </p>
-        <section className="sm:w-[80%] w-[80vw] m-auto mt-5  bg-white h-[50px] p-2 md:mt-9 md:mx-0  rounded-full flex">
+        <section className="w-[90vw] sm:w-[80vw] m-auto mt-5  bg-white h-[50px] p-2 md:mt-9 md:mx-0  justify-between rounded-full flex">
           <FontAwesomeIcon
             className="w-[50px] h-[30px] text-yellow-500"
             icon={faMapMarker}
@@ -63,7 +63,7 @@ const Intro: React.FC = () => {
             id="pincode"
             type="text"
             onChange={(e) => handlePincode(e.target.value)}
-            className="w-[175px]mx-3  text-xl border-none outline-none h-[35px]"
+            className="w-[175px] mx-3  text-xl border-none outline-none h-[35px]"
             placeholder="Enter pincode:"
           ></input>
           <button

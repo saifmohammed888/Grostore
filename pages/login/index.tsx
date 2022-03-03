@@ -19,9 +19,9 @@ const Login: React.FC = () => {
         ogDescription="Grostore, easy login with google auth"
       />
       <Layout>
-        <div className="w-[50vw] grid grid-cols-2 bg-white text-center m-auto h-[50vh] border border-l my-[15vh] rounded shadow-2xl">
-          <section className="bg-blue-900 p-4">
-            <p className="text-white text-lg">
+        <div className="w-[90vw] m-auto md:w-[70vw] lg:w-[50vw] p-4 grid grdi-cols-1 md:grid-cols-2 bg-white text-center h-auto border border-l my-[15vh] rounded shadow-2xl">
+          <section className="bg-blue-900 h-auto p-2 relative grid grid-row-2     ">
+            <p className="text-white text-lg hidden sm:block">
               Welcome back to Grostores, <br />
               Sign In to get your daily essentials
             </p>
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
               className="w-[20vw] absolute bottom-0"
             />
           </section>
-          <section className="p-4">
+          <section className="h-[100%]  p-2">
             <section>
               <Image
                 src={delivery}
