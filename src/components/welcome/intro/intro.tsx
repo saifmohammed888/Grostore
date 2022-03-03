@@ -54,7 +54,7 @@ const Intro: React.FC = () => {
           Enter your pincode to verify delivery available to your place <br />
           Thanks for choosing us.
         </p>
-        <section className="w-[90vw] sm:w-[80vw] m-auto mt-5  bg-white h-[50px] p-2 md:mt-9 md:mx-0  justify-between rounded-full flex">
+        <section className="w-[90%] sm:w-[70%] m-auto mt-5  bg-white h-[50px] p-2 md:mt-9 md:mx-0  justify-between rounded-full flex">
           <FontAwesomeIcon
             className="w-[50px] h-[30px] text-yellow-500"
             icon={faMapMarker}

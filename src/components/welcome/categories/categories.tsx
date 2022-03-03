@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 
 const CardItem = dynamic(() => import('components/common/card/card'));
 
-const Category: React.FC = () => {
+const Category = () => {
   return (
     <div className="lg:w-[80%] md:w-[90%] w-[96%]  min-h-[60vh] mx-auto block h-auto p-10">
       <h3 className=" text-2xl sm:text-4xl text-gray-500 italic  font-medium m-8 ">
