@@ -1,10 +1,11 @@
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { delivery, fastDelivery } from 'constants/images';
-import Layout from 'antd/lib/layout/layout';
+
 import Heads from 'components/common/Head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Layout from 'components/common/layout/layout';
 
 const Register: React.FC = () => {
   return (
@@ -16,9 +17,9 @@ const Register: React.FC = () => {
         ogDescription="Grostore, quick register with google to get best discounts"
       />
       <Layout>
-        <main className="w-screen h-screen ">
-          <div className="w-[50vw] grid grid-cols-2 bg-white text-center m-auto h-[50vh] border border-l my-[15vh] rounded shadow-2xl">
-            <section className="bg-blue-900 relative p-10">
+        <main className="w-screen h-auto ">
+          <div className="  w-[90vw] m-auto md:w-[70vw] lg:w-[50vw] p-4 grid grdi-cols-1 md:grid-cols-2 bg-white text-center h-auto border border-l my-[15vh] rounded shadow-2xl">
+            <section className="bg-blue-900 h-[100%]  p-2">
               <p className="text-white text-lg">
                 Welcome to Grostores, <br />
                 Sign to up to receive exciting offers
@@ -31,7 +32,7 @@ const Register: React.FC = () => {
                 className="w-[20vw] absolute bottom-0"
               />
             </section>
-            <section className="p-4">
+            <section className="h-[100%] p-2">
               <section>
                 <Image
                   src={delivery}

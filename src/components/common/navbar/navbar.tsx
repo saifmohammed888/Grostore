@@ -92,7 +92,7 @@ const Welcome: React.FC = () => {
         )}
       </section>
       {toggle ? (
-        <section className="block text-white bg-banner h-screen text-lg z-10 md:hidden absolute bg-transparent bg-center bg-cover w-screen top-[120px]">
+        <section className="block text-white bg-banner h-screen text-lg z-10 md:hidden fixed bg-transparent bg-center bg-cover w-screen top-[12vh] left-0">
           <ul>
             <li className="m-4 hover:text-yellow-600">
               <Link href="/" passHref>

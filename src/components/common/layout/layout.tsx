@@ -32,7 +32,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <>
       <div>
-        <div className="alert">
+        <div className="fixed top-[15%] right-[-5%] translate-x-[-50%] translate-y-[-50%] sm:w-[50vw] w-[70vw] md:w-[30vw] lg:w-[20vw] z-10">
           {isAlert ? <Success message={alert.message} /> : <></>}
           {isError ? <Error message={alert.message} /> : <></>}
         </div>

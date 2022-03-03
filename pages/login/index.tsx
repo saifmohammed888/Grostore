@@ -20,7 +20,7 @@ const Login: React.FC = () => {
       />
       <Layout>
         <div className="w-[50vw] grid grid-cols-2 bg-white text-center m-auto h-[50vh] border border-l my-[15vh] rounded shadow-2xl">
-          <section className="bg-blue-900 relative p-10">
+          <section className="bg-blue-900 p-4">
             <p className="text-white text-lg">
               Welcome back to Grostores, <br />
               Sign In to get your daily essentials
