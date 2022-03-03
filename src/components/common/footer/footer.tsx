@@ -11,34 +11,9 @@ import { logo } from 'constants/images';
 
 const Footer: React.FC = () => {
   return (
-    <div className="w-screen h-[40vh] bg-banner p-4 text-white">
-      <section className="w-[80%] m-auto h-[100%] grid grid-cols-4">
-        <section>
-          <span className="w-100 flex h-[10vh] justify-left items-center text-white">
-            <Image src={logo} alt="logoImage" width="100" height="100" />
-            <p className="text-2xl font-bold  ">Grostore</p>
-          </span>
-          <p className="flex justify-around w-[80%] my-5">
-            <FontAwesomeIcon
-              icon={faFacebookF}
-              className="w-[2vw] h-[2vw] hover:bg-orange-600  rounded-full border-white text-white border p-2"
-            />
-            <FontAwesomeIcon
-              icon={faInstagram}
-              className="w-[2vw] h-[2vw]  hover:bg-orange-600 rounded-full border-white text-white border p-2"
-            />
-            <FontAwesomeIcon
-              icon={faLinkedinIn}
-              className="w-[2vw] h-[2vw] hover:bg-orange-600  rounded-full border-white text-white border p-2"
-            />
-            <FontAwesomeIcon
-              icon={faYoutube}
-              className="w-[2vw] h-[2vw] hover:bg-orange-600  rounded-full border-white text-white border p-2"
-            />
-          </p>
-          <p className="text-lg  text-yellow-500 px-3">@2022 Grostore</p>
-        </section>
-        <section className="my-4 px-10">
+    <div className="w-screen h-auto bg-banner p-4 text-white">
+      <section className="w-[100%] md:w-[70%]  m-auto h-auto grid grid-cols-1 md:grid-cols-4">
+        <section className="my-4 sm:[px-1] px-10">
           <p className="text-2xl font-lg">Quick Links</p>
           <ul className="font-light text-lg text-left  ">
             <li className="my-4 list-disc hover:text-orange-500 ">
@@ -63,7 +38,7 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </section>
-        <section className="my-4 px-10">
+        <section className="my-4 sm:[px-1] px-10">
           <p className="text-2xl font-lg">Services</p>
           <ul className="font-light text-lg text-left  ">
             <li className="my-4 list-disc hover:text-orange-500 ">
@@ -88,7 +63,7 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </section>
-        <section className="my-4 px-10">
+        <section className="my-4 sm:[px-1] px-10">
           <p className="text-2xl font-lg">Support</p>
           <ul className="font-light text-lg text-left  ">
             <li className="my-4 list-disc hover:text-orange-500 ">
@@ -107,6 +82,41 @@ const Footer: React.FC = () => {
               </Link>
             </li>
           </ul>
+        </section>
+        <section className="">
+          <span className="w-100 flex justify-center text-center">
+            <Image
+              src={logo}
+              alt="logoImage"
+              className="m-auto"
+              width="100"
+              height="100"
+            />
+          </span>
+          <p className="flex mb-6 mx-auto w-[90%] justify-center text-center">
+            Grostore
+          </p>
+          <p className="flex m-6 mx-auto w-[90%] justify-between">
+            <FontAwesomeIcon
+              icon={faFacebookF}
+              className="w-[30px] h-[30px] hover:bg-orange-600  rounded-full border-white text-white border p-2"
+            />
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="w-[30px] h-[30px]  hover:bg-orange-600 rounded-full border-white text-white border p-2"
+            />
+            <FontAwesomeIcon
+              icon={faLinkedinIn}
+              className="w-[30px] h-[30px] hover:bg-orange-600  rounded-full border-white text-white border p-2"
+            />
+            <FontAwesomeIcon
+              icon={faYoutube}
+              className="w-[30px] h-[30px] hover:bg-orange-600  rounded-full border-white text-white border p-2"
+            />
+          </p>
+          <p className="m-6 text-center mx-auto w-[90%] text-yellow-500">
+            @2022 Grostore | Created with Nextjs by saifmohammed888
+          </p>
         </section>
       </section>
     </div>

@@ -51,11 +51,14 @@ const Welcome: React.FC = () => {
           <li className="w-auto  p-2 mx-3  md:mx-6 hover:text-red-600  hover:scale-125 transition duration-200">
             <Link href="/cart" passHref>
               <a className="flex w-auto">
-                <FontAwesomeIcon
-                  className="text-yellow-500 w-[1.5vw]"
-                  icon={faShoppingCart}
-                />
-                <p className="text-white mx-2">{cartCount}</p>
+                <Link href="/cart" passHref>
+                  <a className="link">
+                    CART
+                    <span className="text-white mx-2 p-1 w-[10px] h-[5px] bg-blue-600 rounded-full">
+                      {cartCount}
+                    </span>
+                  </a>
+                </Link>
               </a>
             </Link>
           </li>
@@ -89,7 +92,7 @@ const Welcome: React.FC = () => {
         )}
       </section>
       {toggle ? (
-        <section className="block text-white bg-banner h-screen text-lg z-10 md:hidden absolute bg-transparent bg-center bg-cover w-screen top-[14vh]">
+        <section className="block text-white bg-banner h-screen text-lg z-10 md:hidden absolute bg-transparent bg-center bg-cover w-screen top-[120px]">
           <ul>
             <li className="m-4 hover:text-yellow-600">
               <Link href="/" passHref>
@@ -112,12 +115,14 @@ const Welcome: React.FC = () => {
                 <a className="link">SERVICES</a>
               </Link>
             </li>
-            <li className="w-[4vh] h-[4vh] p-2 bg-white rounded-full mx-3  md:mx-6 hover:text-red-600  hover:scale-125 transition duration-200">
-              <Link href="/cart" passHref>
-                <FontAwesomeIcon
-                  icon={faShoppingCart}
-                  className="text-yellow-600"
-                />
+            <li className="m-4 hover:text-yellow-600">
+              <Link href="/services" passHref>
+                <a className="link">
+                  CART
+                  <span className="text-white mx-2 p-1 w-[10px] h-[5px] bg-blue-600 rounded-full">
+                    {cartCount}
+                  </span>
+                </a>
               </Link>
             </li>
             <li className="m-4 hover:text-yellow-600">

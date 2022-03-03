@@ -19,7 +19,6 @@ const Welcome: React.FC = () => {
         <Popular />
         <Categories />
         <WhyGrostore />
-        <Footer />
       </div>
     </Layout>
   );

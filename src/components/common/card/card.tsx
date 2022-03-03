@@ -9,7 +9,7 @@ const CardItem: React.FC<Props> = ({ item }) => {
   return (
     <section
       key={item.id}
-      className="w-[16vw] min-h-[33vh] hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
+      className="lg:w-[16vw] md:w-[22vw] sm:w-[30vw] w-[60vw] m-auto my-5  sm:m-1 min-h-[33vh] hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
     >
       <Image
         src={item.image}

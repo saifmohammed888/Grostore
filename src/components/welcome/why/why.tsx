@@ -4,11 +4,11 @@ import Image from 'next/image';
 const WhyGrostores: React.FC = () => {
   return (
     <div className="w-screen min-h-[50vh] h-auto ">
-      <section className="w-[70%] m-auto text-center ">
+      <section className="w-[70%]  md:w-[80%] sm:w-[90%] m-auto text-center ">
         <h1 className="text-4xl text-gray-500 italic font-bold text-left ">
           Why Grostores
         </h1>
-        <section className="w-[100%] h-[80%] grid grid-cols-3 gap-10 my-[10vh] ">
+        <section className="w-[100%] h-[80%] sm:grid sm:grid-cols-3 block gap-10 my-[10vh] ">
           <section>
             <Image src={easyBooking} width="100" alt="Item" height="100" />
             <p className="text-2xl  text-gray-700">Easy to Order</p>

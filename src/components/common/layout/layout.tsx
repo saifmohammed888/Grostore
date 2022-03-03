@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import alertActionCreator from 'redux/actionCreators/alertAction';
 import { alertTypes } from 'redux/types';
-import Heads from '../Head';
+import Footer from '../footer/footer';
+
 const Success = dynamic(() => import('components/common/Alerts/Success'));
 const Navbar = dynamic(() => import('components/common/navbar/navbar'));
 const Error = dynamic(() => import('components/common/Alerts/Error'));
@@ -29,19 +30,21 @@ const Layout: React.FunctionComponent = ({ children }) => {
   }, [alert, dispatch]);
 
   return (
-    <div>
-      <Heads />
-      <div className="alert">
-        {isAlert ? <Success message={alert.message} /> : <></>}
-        {isError ? <Error message={alert.message} /> : <></>}
+    <>
+      <div>
+        <div className="alert">
+          {isAlert ? <Success message={alert.message} /> : <></>}
+          {isError ? <Error message={alert.message} /> : <></>}
+        </div>
+        <div className="m-0 p-0 relative h-auto">
+          <section className="bg-[#252d27] ">
+            <Navbar />
+          </section>
+          <main>{children}</main>
+          <Footer />
+        </div>
       </div>
-      <div className="m-0 p-0">
-        <section className="bg-[#252d27] ">
-          <Navbar />
-        </section>
-        <main>{children}</main>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { pincode, Pincode } from 'constants/data/pincode';
+import { Pincode } from 'constants/data/pincode';
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faMapMarker } from '@fortawesome/free-solid-svg-icons';
@@ -35,8 +35,8 @@ const Intro: React.FC = () => {
   };
 
   return (
-    <section className="w-screen bg-banner bg-bottom h-[60vh] flex justify-between relative">
-      <div className="w-[40%] h-[100%] p-20">
+    <section className="w-screen bg-banner h-[100vh] py-20 sm:p-0 box-border bg-bottom sm:h-[60vh] block md:flex justify-between relative">
+      <div className="w-auto h-[100%] text-center md:text-left md:p-20 py-5">
         <span className="flex w-[200px] m-auto md:m-0 rounded-full text-yellow-500 items-center bg-[#2c342e] p-1">
           <FontAwesomeIcon
             className="w-[wvw] text-red-500 h-[2vw] mx-2"
@@ -54,7 +54,7 @@ const Intro: React.FC = () => {
           Enter your pincode to verify delivery available to your place <br />
           Thanks for choosing us.
         </p>
-        <section className="w-[90vw] sm:w-[400px] m-auto mt-5  bg-white h-[50px] p-2 md:mt-9 md:mx-0  rounded-full flex">
+        <section className="sm:w-[80%] w-[80vw] m-auto mt-5  bg-white h-[50px] p-2 md:mt-9 md:mx-0  rounded-full flex">
           <FontAwesomeIcon
             className="w-[50px] h-[30px] text-yellow-500"
             icon={faMapMarker}
@@ -74,7 +74,7 @@ const Intro: React.FC = () => {
           </button>
         </section>
       </div>
-      <div className="w-[30vw] h-[50vh] bottom-5 relative right-0">
+      <div className="w-[30vw] h-[50vh] lg:bottom-5 top-[10vh] relative right-0 hidden md:block">
         <Image src={delivery} alt="delivery" priority layout="fill" />
       </div>
     </section>
@@ -82,4 +82,3 @@ const Intro: React.FC = () => {
 };
 
 export default Intro;
-

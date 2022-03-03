@@ -44,7 +44,7 @@ const CardProduct: React.FC<Props> = ({ item }) => {
   return (
     <section
       key={item.id}
-      className="w-[16vw] min-h-[33vh] h-auto hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
+      className="w-[60vw] my-4 m-auto   lg:w-[16vw] md:w-[22vw] sm:w-[30vw] min-h-[50vh] h-auto hover:shadow-xl duration-500 border bg-white relative p-1 rounded-[1vh] grid grid-rows-2"
     >
       <Image
         src={item.image}

@@ -6,11 +6,11 @@ const Popular: React.FC = () => {
   let trendingItems = items.filter((item) => item.trending === true);
 
   return (
-    <div className="w-[80%] mx-auto block h-auto p-10 bg-white">
-      <h3 className="text-4xl text-gray-500 italic  font-medium m-8 ">
+    <div className="lg:w-[80%] md:w-[85%] w-[96%] mx-auto block h-auto p-10 bg-white">
+      <h3 className="sm:text-4xl text-2xl  text-gray-500 italic  font-medium m-8 ">
         Most Trending Items
       </h3>
-      <section className="flex justify-left my-20 flex-wrap gap-10 ">
+      <section className="block  sm:flex dm:justify-center md:justify-between lg:justify-left my-20 flex-wrap gap-10 ">
         {trendingItems.map((item, index) => {
           return <CardProduct key={index} item={item} />;
         })}
