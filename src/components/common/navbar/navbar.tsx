@@ -24,7 +24,7 @@ const Welcome: React.FC = () => {
         <Image
           src={logo}
           width="100"
-          alt=""
+          alt="logo"
           height="100"
           priority
           className="rounded-full"
@@ -35,40 +35,46 @@ const Welcome: React.FC = () => {
         <ul className="text-gray-300 w-auto flex items-center justify-between text-lg ">
           <li className="mx-3  md:mx-6 hover:scale-125 transition duration-200">
             <Link href="/" passHref>
-              <a className="link">HOME</a>
+              <span className="link">
+                <a>HOME</a>
+              </span>
             </Link>
           </li>
           <li className="mx-3  md:mx-6  hover:scale-125 transition duration-200">
             <Link href="/offers" passHref>
-              <a className="link">OFFERS</a>
+              <span className="link">
+                <a>OFFERS</a>
+              </span>
             </Link>
           </li>
           <li className="mx-3  md:mx-6  hover:scale-125 transition duration-200">
             <Link href="/categories" passHref>
-              <a className="link">CATEGORIES</a>
+              <span className="link">
+                <a>CATEGORIES</a>
+              </span>
             </Link>
           </li>
           <li className="w-auto  p-2 mx-3  md:mx-6 hover:text-red-600  hover:scale-125 transition duration-200">
             <Link href="/cart" passHref>
-              <a className="flex w-auto">
+              <span className="flex w-auto">
                 <Link href="/cart" passHref>
-                  <a className="link">
-                    CART
+                  <span className="link">
+                    <a>CART</a>
                     <span className="text-white mx-2 p-1 w-[10px] h-[5px] bg-blue-600 rounded-full">
                       {cartCount}
                     </span>
-                  </a>
+                  </span>
                 </Link>
-              </a>
+              </span>
             </Link>
           </li>
           <li className="mx-3  md:mx-6 text-white ">
             <Link href="/register" passHref>
-              <a className="text-white">
+              <span className="text-white">
                 <button className="bg-yellow-600 px-4 py-2 rounded-full">
                   REGISTER NEW
                 </button>
-              </a>
+              </span>
             </Link>
           </li>
         </ul>
@@ -96,33 +102,39 @@ const Welcome: React.FC = () => {
           <ul>
             <li className="m-4 hover:text-yellow-600">
               <Link href="/" passHref>
-                <a className="link">HOME</a>
+                <span className="link">
+                  <a href="#">HOME</a>
+                </span>
               </Link>
             </li>
             <li className="m-4 hover:text-yellow-600">
               <Link href="/offers" passHref>
-                <a className="link">OFFERS</a>
+                <span className="link">
+                  <a>OFFERS</a>
+                </span>
               </Link>
             </li>
             <li className="m-4 hover:text-yellow-600">
               <Link href="/categories" passHref>
-                <a className="link">CATEGORIES</a>
+                <span className="link">
+                  <a>CATEGORIES</a>
+                </span>
               </Link>
             </li>
 
             <li className="m-4 hover:text-yellow-600">
               <Link href="/products" passHref>
-                <a className="link">Products</a>
+                <span className="link">Products</span>
               </Link>
             </li>
             <li className="m-4 hover:text-yellow-600">
               <Link href="/cart" passHref>
-                <a className="link">
-                  CART
+                <span className="link">
+                  <a>CART</a>
                   <span className="text-white mx-2 p-1 w-[10px] h-[5px] bg-blue-600 rounded-full">
                     {cartCount}
                   </span>
-                </a>
+                </span>
               </Link>
             </li>
             <li className="m-4 hover:text-yellow-600">

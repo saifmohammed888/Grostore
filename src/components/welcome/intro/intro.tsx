@@ -35,7 +35,7 @@ const Intro: React.FC = () => {
   };
 
   return (
-    <section className="w-screen bg-banner h-[100vh] py-20 sm:p-0 box-border bg-bottom sm:h-[60vh] block md:flex justify-between relative">
+    <section className="w-screen bg-banner h-[70vh] py-20 sm:p-0 box-border bg-bottom sm:h-[60vh] block md:flex justify-between relative">
       <div className="w-auto h-[100%] text-center md:text-left md:p-20 py-5">
         <span className="flex w-[200px] m-auto md:m-0 rounded-full text-yellow-500 items-center bg-[#2c342e] p-1">
           <FontAwesomeIcon

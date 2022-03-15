@@ -65,7 +65,7 @@ export default function Products({ item }) {
                 </button>
               </span>
             </section>
-            <section className="flex flex-wrap gap-10 my-5 h-auto justify-center md:justify-center">
+            <section className="grid grid-cols-1 my-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
               {items.map((product, index) => {
                 return (
                   <section key={index}>

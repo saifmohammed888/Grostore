@@ -12,28 +12,36 @@ import { logo } from 'constants/images';
 const Footer: React.FC = () => {
   return (
     <div className="w-screen h-auto bg-banner p-4 text-white">
-      <section className="w-[100%] md:w-[70%]  m-auto h-auto grid grid-cols-1 md:grid-cols-4">
+      <section className="w-[100%] lg:w-[70%]  m-auto h-auto grid grid-cols-1 md:grid-cols-4">
         <section className="my-4 sm:[px-1] px-10">
           <p className="text-2xl font-lg">Quick Links</p>
           <ul className="font-light text-lg text-left  ">
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/" passHref>
-                <a className="link">Home</a>
+                <span>
+                  <a className="link">Home</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/offers" passHref>
-                <a className="link">Offers</a>
+                <span>
+                  <a className="link">Offers</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/categories" passHref>
-                <a className="link"> Categories</a>
+                <span>
+                  <a className="link"> Categories</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/cart" passHref>
-                <a className="link"> Cart</a>
+                <span>
+                  <a className="link"> Cart</a>
+                </span>
               </Link>
             </li>
           </ul>
@@ -43,22 +51,30 @@ const Footer: React.FC = () => {
           <ul className="font-light text-lg text-left  ">
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/services" passHref>
-                <a className="link">Home Delivery</a>
+                <span>
+                  <a className="link">Home Delivery</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500  ">
               <Link href="/services" passHref>
-                <a className="link">Store pickup</a>
+                <span>
+                  <a className="link">Store pickup</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/services" passHref>
-                <a className="link"> Subscription</a>
+                <span>
+                  <a className="link"> Subscription</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/services" passHref>
-                <a className="link"> 24/7 Services</a>
+                <span>
+                  <a className="link"> 24/7 Services</a>
+                </span>
               </Link>
             </li>
           </ul>
@@ -68,17 +84,23 @@ const Footer: React.FC = () => {
           <ul className="font-light text-lg text-left  ">
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/contact" passHref>
-                <a className="link"> Contact</a>
+                <span>
+                  <a className="link"> Contact</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/contact" passHref>
-                <a className="link"> Returns</a>
+                <span>
+                  <a className="link"> Returns</a>
+                </span>
               </Link>
             </li>
             <li className="my-4 list-disc hover:text-orange-500 ">
               <Link href="/contact" passHref>
-                <a className="link"> Subscription</a>
+                <span>
+                  <a className="link"> Subscription</a>
+                </span>
               </Link>
             </li>
           </ul>

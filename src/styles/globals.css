@@ -15,11 +15,11 @@
   outline: 1px solid slategrey;
 }
 
-.link {
+.link > a {
   color: white;
 }
 
-.link:hover {
+.link > a :hover {
   color: rgb(223, 195, 72);
 }
 
@@ -28,3 +28,10 @@ body {
   padding: 0;
 }
 
+.link {
+  color: white;
+}
+
+.link:hover {
+  color: rgb(223, 195, 72);
+}

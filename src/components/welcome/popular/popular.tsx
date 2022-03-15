@@ -10,7 +10,7 @@ const Popular: React.FC = () => {
       <h3 className="sm:text-4xl text-2xl  text-gray-500 italic  font-medium m-8 ">
         Most Trending Items
       </h3>
-      <section className="block  sm:flex dm:justify-center md:justify-between lg:justify-left my-20 flex-wrap gap-10 ">
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {trendingItems.map((item, index) => {
           return <CardProduct key={index} item={item} />;
         })}
